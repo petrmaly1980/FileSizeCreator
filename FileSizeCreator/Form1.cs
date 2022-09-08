@@ -21,6 +21,7 @@ namespace FileSizeCreator
             InitializeComponent();
             BackgroundWorker worker = new BackgroundWorker();
             comboBox1.SelectedIndex = 0;
+            radioButtonSingleFile.Checked = true;
         }
         
         public static void CreateRandomFile(string filePath, int sizeInMb)

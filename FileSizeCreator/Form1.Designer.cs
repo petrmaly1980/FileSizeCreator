@@ -39,29 +39,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMultipleFiles = new System.Windows.Forms.RadioButton();
+            this.radioButtonSingleFile = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(12, 315);
+            this.buttonCreate.Location = new System.Drawing.Point(12, 279);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(210, 24);
+            this.buttonCreate.Size = new System.Drawing.Size(440, 24);
             this.buttonCreate.TabIndex = 0;
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -79,7 +73,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(439, 142);
+            this.groupBox1.Size = new System.Drawing.Size(439, 114);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "File";
@@ -159,94 +153,38 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 175);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.radioButtonMultipleFiles);
+            this.groupBox2.Controls.Add(this.radioButtonSingleFile);
+            this.groupBox2.Location = new System.Drawing.Point(12, 152);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(439, 122);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Option";
             // 
-            // groupBox3
+            // radioButtonMultipleFiles
             // 
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Location = new System.Drawing.Point(130, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(125, 94);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.radioButtonMultipleFiles.AutoSize = true;
+            this.radioButtonMultipleFiles.Location = new System.Drawing.Point(248, 19);
+            this.radioButtonMultipleFiles.Name = "radioButtonMultipleFiles";
+            this.radioButtonMultipleFiles.Size = new System.Drawing.Size(152, 17);
+            this.radioButtonMultipleFiles.TabIndex = 4;
+            this.radioButtonMultipleFiles.TabStop = true;
+            this.radioButtonMultipleFiles.Text = "Multiple files with Timestam";
+            this.radioButtonMultipleFiles.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // radioButtonSingleFile
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "postfix";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(16, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Multiple Files";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "prefix";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(44, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(73, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(44, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(73, 20);
-            this.textBox4.TabIndex = 6;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(275, 31);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(152, 17);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Multiple files with Timestam";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(22, 31);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Single File";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonSingleFile.AutoSize = true;
+            this.radioButtonSingleFile.Location = new System.Drawing.Point(104, 19);
+            this.radioButtonSingleFile.Name = "radioButtonSingleFile";
+            this.radioButtonSingleFile.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonSingleFile.TabIndex = 2;
+            this.radioButtonSingleFile.TabStop = true;
+            this.radioButtonSingleFile.Text = "Single File";
+            this.radioButtonSingleFile.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -264,22 +202,27 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // button4
+            // textBox1
             // 
-            this.button4.Location = new System.Drawing.Point(287, 312);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 30);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "FS.SEEK";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.textBox1.Location = new System.Drawing.Point(262, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(183, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Split size:(MB)";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 370);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(463, 316);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCreate);
@@ -287,13 +230,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "File Size Creator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -310,21 +251,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.RadioButton radioButtonSingleFile;
+        private System.Windows.Forms.RadioButton radioButtonMultipleFiles;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.TextBox txtFileSize;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
