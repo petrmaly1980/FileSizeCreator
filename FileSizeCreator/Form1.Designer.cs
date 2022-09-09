@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateSingle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtFileSize = new System.Windows.Forms.TextBox();
@@ -39,44 +39,47 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButtonMultipleFiles = new System.Windows.Forms.RadioButton();
-            this.radioButtonSingleFile = new System.Windows.Forms.RadioButton();
+            this.btnCreateMultipleFiles = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFilesCount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBoxSplitSize = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonCreate
+            // buttonCreateSingle
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(12, 279);
-            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(440, 24);
-            this.buttonCreate.TabIndex = 0;
-            this.buttonCreate.Text = "Create";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreateSingle.Location = new System.Drawing.Point(15, 89);
+            this.buttonCreateSingle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCreateSingle.Name = "buttonCreateSingle";
+            this.buttonCreateSingle.Size = new System.Drawing.Size(259, 30);
+            this.buttonCreateSingle.TabIndex = 0;
+            this.buttonCreateSingle.Text = "Create Single";
+            this.buttonCreateSingle.UseVisualStyleBackColor = true;
+            this.buttonCreateSingle.Click += new System.EventHandler(this.buttonCreateSingle_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.txtFileSize);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.buttonOpen);
             this.groupBox1.Controls.Add(this.txtBoxFileName);
             this.groupBox1.Controls.Add(this.txtBoxOutputFolder);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Location = new System.Drawing.Point(16, 33);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(439, 114);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(585, 100);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "File";
+            this.groupBox1.Text = "Single File";
             // 
             // comboBox1
             // 
@@ -85,33 +88,37 @@
             "GB",
             "MB",
             "B"});
-            this.comboBox1.Location = new System.Drawing.Point(319, 71);
+            this.comboBox1.Location = new System.Drawing.Point(76, 54);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(81, 21);
+            this.comboBox1.Size = new System.Drawing.Size(107, 24);
             this.comboBox1.TabIndex = 7;
             // 
             // txtFileSize
             // 
-            this.txtFileSize.Location = new System.Drawing.Point(118, 71);
+            this.txtFileSize.Location = new System.Drawing.Point(76, 25);
+            this.txtFileSize.Margin = new System.Windows.Forms.Padding(4);
             this.txtFileSize.Name = "txtFileSize";
-            this.txtFileSize.Size = new System.Drawing.Size(195, 20);
+            this.txtFileSize.Size = new System.Drawing.Size(197, 22);
             this.txtFileSize.TabIndex = 6;
             this.txtFileSize.Text = "1";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 74);
+            this.label5.Location = new System.Drawing.Point(7, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "File Size:";
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(325, 17);
+            this.buttonOpen.Location = new System.Drawing.Point(433, 21);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpen.Size = new System.Drawing.Size(100, 28);
             this.buttonOpen.TabIndex = 4;
             this.buttonOpen.Text = "Open";
             this.buttonOpen.UseVisualStyleBackColor = true;
@@ -119,72 +126,111 @@
             // 
             // txtBoxFileName
             // 
-            this.txtBoxFileName.Location = new System.Drawing.Point(118, 45);
+            this.txtBoxFileName.Location = new System.Drawing.Point(157, 55);
+            this.txtBoxFileName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxFileName.Name = "txtBoxFileName";
-            this.txtBoxFileName.Size = new System.Drawing.Size(195, 20);
+            this.txtBoxFileName.Size = new System.Drawing.Size(259, 22);
             this.txtBoxFileName.TabIndex = 3;
             this.txtBoxFileName.Text = "data.dat";
             // 
             // txtBoxOutputFolder
             // 
-            this.txtBoxOutputFolder.Location = new System.Drawing.Point(118, 19);
+            this.txtBoxOutputFolder.Location = new System.Drawing.Point(157, 23);
+            this.txtBoxOutputFolder.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxOutputFolder.Name = "txtBoxOutputFolder";
-            this.txtBoxOutputFolder.Size = new System.Drawing.Size(195, 20);
+            this.txtBoxOutputFolder.Size = new System.Drawing.Size(259, 22);
             this.txtBoxOutputFolder.TabIndex = 2;
             this.txtBoxOutputFolder.Text = "C:\\temp\\";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 48);
+            this.label2.Location = new System.Drawing.Point(77, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "File Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 23);
+            this.label1.Location = new System.Drawing.Point(55, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(90, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Output Folder:";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCreateMultipleFiles);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtFilesCount);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.radioButtonMultipleFiles);
-            this.groupBox2.Controls.Add(this.radioButtonSingleFile);
-            this.groupBox2.Location = new System.Drawing.Point(12, 152);
+            this.groupBox2.Controls.Add(this.txtBoxSplitSize);
+            this.groupBox2.Location = new System.Drawing.Point(303, 140);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(439, 122);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(298, 124);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Option";
+            this.groupBox2.Text = "Multiple Files";
             // 
-            // radioButtonMultipleFiles
+            // btnCreateMultipleFiles
             // 
-            this.radioButtonMultipleFiles.AutoSize = true;
-            this.radioButtonMultipleFiles.Location = new System.Drawing.Point(248, 19);
-            this.radioButtonMultipleFiles.Name = "radioButtonMultipleFiles";
-            this.radioButtonMultipleFiles.Size = new System.Drawing.Size(152, 17);
-            this.radioButtonMultipleFiles.TabIndex = 4;
-            this.radioButtonMultipleFiles.TabStop = true;
-            this.radioButtonMultipleFiles.Text = "Multiple files with Timestam";
-            this.radioButtonMultipleFiles.UseVisualStyleBackColor = true;
+            this.btnCreateMultipleFiles.Location = new System.Drawing.Point(7, 90);
+            this.btnCreateMultipleFiles.Name = "btnCreateMultipleFiles";
+            this.btnCreateMultipleFiles.Size = new System.Drawing.Size(279, 29);
+            this.btnCreateMultipleFiles.TabIndex = 10;
+            this.btnCreateMultipleFiles.Text = "Create Multiple Files";
+            this.btnCreateMultipleFiles.UseVisualStyleBackColor = true;
+            this.btnCreateMultipleFiles.Click += new System.EventHandler(this.btnCreateMultipleFiles_Click);
             // 
-            // radioButtonSingleFile
+            // label6
             // 
-            this.radioButtonSingleFile.AutoSize = true;
-            this.radioButtonSingleFile.Location = new System.Drawing.Point(104, 19);
-            this.radioButtonSingleFile.Name = "radioButtonSingleFile";
-            this.radioButtonSingleFile.Size = new System.Drawing.Size(73, 17);
-            this.radioButtonSingleFile.TabIndex = 2;
-            this.radioButtonSingleFile.TabStop = true;
-            this.radioButtonSingleFile.Text = "Single File";
-            this.radioButtonSingleFile.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(264, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "MB";
+            // 
+            // txtFilesCount
+            // 
+            this.txtFilesCount.Location = new System.Drawing.Point(157, 25);
+            this.txtFilesCount.Name = "txtFilesCount";
+            this.txtFilesCount.Size = new System.Drawing.Size(100, 22);
+            this.txtFilesCount.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(75, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Files count:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(86, 54);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Split size:";
+            // 
+            // txtBoxSplitSize
+            // 
+            this.txtBoxSplitSize.Location = new System.Drawing.Point(157, 54);
+            this.txtBoxSplitSize.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxSplitSize.Name = "txtBoxSplitSize";
+            this.txtBoxSplitSize.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxSplitSize.TabIndex = 5;
             // 
             // menuStrip1
             // 
@@ -192,7 +238,8 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(463, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(617, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,33 +249,30 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // textBox1
+            // groupBox3
             // 
-            this.textBox1.Location = new System.Drawing.Point(262, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(183, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Split size:(MB)";
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.buttonCreateSingle);
+            this.groupBox3.Controls.Add(this.txtFileSize);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(16, 140);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(280, 124);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Single";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 316);
+            this.ClientSize = new System.Drawing.Size(617, 278);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "File Size Creator";
             this.groupBox1.ResumeLayout(false);
@@ -237,6 +281,8 @@
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,15 +290,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateSingle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBoxFileName;
         private System.Windows.Forms.TextBox txtBoxOutputFolder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButtonSingleFile;
-        private System.Windows.Forms.RadioButton radioButtonMultipleFiles;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button buttonOpen;
@@ -260,7 +304,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxSplitSize;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtFilesCount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCreateMultipleFiles;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

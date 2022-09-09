@@ -21,7 +21,6 @@ namespace FileSizeCreator
             InitializeComponent();
             BackgroundWorker worker = new BackgroundWorker();
             comboBox1.SelectedIndex = 0;
-            radioButtonSingleFile.Checked = true;
         }
         
         public static void CreateRandomFile(string filePath, int sizeInMb)
@@ -44,41 +43,40 @@ namespace FileSizeCreator
                 }
             }
         }
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonCreateSingle_Click(object sender, EventArgs e)
         {
-            string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
-            //FileStream fs = new FileStream(txtBoxOutputFolder.Text+ timeStamp + txtBoxFileName.Text, FileMode.CreateNew);
+            
+                _size = comboBox1.Text;
+                string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
+                switch (_size)
+                {
+                    
+                    case "GB":
+                        MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
+                        MessageBox.Show("Selected combobox: " + comboBox1.Text);
+                        MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "GB");
+                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text) * 1000);
+                        MessageBox.Show("Finish!");
+                        break;
+                    case "MB":
+                        MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
+                        MessageBox.Show(txtBoxOutputFolder.Text + txtBoxFileName.Text);
+                        MessageBox.Show("Selected combobox: " + comboBox1.Text);
+                        MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "MB");
+                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text));
+                        MessageBox.Show("Finish!");
+                        break;
+                    case "B":
+                        MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
+                        MessageBox.Show(txtBoxOutputFolder.Text + txtBoxFileName.Text);
+                        MessageBox.Show("Selected combobox: " + comboBox1.Text);
+                        MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "Byte");
+                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text));
+                        MessageBox.Show("Finish!");
+                        break;
+                }
+            
 
-            _size = comboBox1.Text;
-            switch (_size)
-            {
-                case "GB":
-                    MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
-                    MessageBox.Show("Selected combobox: " + comboBox1.Text);
-                    MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "GB");
-                    CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text)*1000);
-                    MessageBox.Show("Finish!");
-                    break;
-                case "MB":
-                    MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
-                    MessageBox.Show(txtBoxOutputFolder.Text + txtBoxFileName.Text);
-                    MessageBox.Show("Selected combobox: " + comboBox1.Text);
-                    MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "MB");
-                    CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text));
-                    MessageBox.Show("Finish!");
-                    break;
-                case "B":
-                    MessageBox.Show("Output file: " + txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text);
-                    MessageBox.Show(txtBoxOutputFolder.Text + txtBoxFileName.Text);
-                    MessageBox.Show("Selected combobox: " + comboBox1.Text);
-                    MessageBox.Show("Ready to create file size: " + txtFileSize.Text + "Byte");
-                    CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtFileSize.Text));
-                    MessageBox.Show("Finish!");
-                    break;
-            }
-            //fs.Seek(2048L * 1024 * 1024, SeekOrigin.Begin);
-            //fs.WriteByte(0);
-            //fs.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -104,6 +102,15 @@ namespace FileSizeCreator
         private void buttonOpen_Click(object sender, EventArgs e)
         {
             ChooseFolder();
+        }
+
+        private void btnCreateMultipleFiles_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Convert.ToInt32(txtFilesCount.Text); i++)
+            {
+                string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
+                CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+            }
         }
     }
 }
