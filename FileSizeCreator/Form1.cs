@@ -106,10 +106,32 @@ namespace FileSizeCreator
 
         private void btnCreateMultipleFiles_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Convert.ToInt32(txtFilesCount.Text); i++)
+            if (Directory.Exists(txtBoxOutputFolder.Text))
             {
-                string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
-                CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+                if (String.IsNullOrEmpty(txtFilesCount.Text))
+                {
+                    MessageBox.Show("File Count Empty");
+                }
+                else if (String.IsNullOrEmpty(txtBoxSplitSize.Text))
+                {
+                    MessageBox.Show("Split Size Empty");
+                }
+                else
+                {
+                    int solt = 1;
+                    for (int i = 0; i < Convert.ToInt32(txtFilesCount.Text); i++)
+                    {
+                        
+                        string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
+                        solt++;
+                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + "part" + solt + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+                    }
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Output folder neexistuje: " + txtBoxOutputFolder.Text);
             }
         }
     }
