@@ -21,6 +21,7 @@ namespace FileSizeCreator
             InitializeComponent();
             BackgroundWorker worker = new BackgroundWorker();
             comboBox1.SelectedIndex = 0;
+            
         }
         
         public static void CreateRandomFile(string filePath, int sizeInMb)
@@ -103,9 +104,34 @@ namespace FileSizeCreator
         {
             ChooseFolder();
         }
-
+        public void CheckFolderExist()
+        {
+            if (!Directory.Exists(txtBoxOutputFolder.Text))
+            {
+                DialogResult result = MessageBox.Show("Output directory not exist. Do you want to create?", "Warning",
+                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //code for Yes
+                    MessageBox.Show("Yes");
+                    Directory.CreateDirectory(txtBoxOutputFolder.Text);
+                }
+                else if (result == DialogResult.No)
+                {
+                    //code for No
+                    MessageBox.Show("No");
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    //code for Cancel
+                    MessageBox.Show("Cancel");
+                }
+            }
+            
+        }
         private void btnCreateMultipleFiles_Click(object sender, EventArgs e)
         {
+            CheckFolderExist();
             if (Directory.Exists(txtBoxOutputFolder.Text))
             {
                 if (String.IsNullOrEmpty(txtFilesCount.Text))
@@ -118,13 +144,18 @@ namespace FileSizeCreator
                 }
                 else
                 {
-                    int solt = 1;
+                    int counter = 1;
                     for (int i = 0; i < Convert.ToInt32(txtFilesCount.Text); i++)
                     {
                         
                         string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
-                        solt++;
-                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + "part" + solt + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+                        
+                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + "part" + counter + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+                        lblCreatedFiles.Text = counter.ToString();
+                        counter++;
+                        this.Refresh();
+                        //MessageBox.Show("Continue");
+
                     }
                 }
                 

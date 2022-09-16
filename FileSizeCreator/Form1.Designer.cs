@@ -48,6 +48,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCreatedFiles = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -57,10 +59,10 @@
             // buttonCreateSingle
             // 
             this.buttonCreateSingle.Location = new System.Drawing.Point(11, 72);
-            this.buttonCreateSingle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCreateSingle.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateSingle.Name = "buttonCreateSingle";
             this.buttonCreateSingle.Size = new System.Drawing.Size(194, 24);
-            this.buttonCreateSingle.TabIndex = 0;
+            this.buttonCreateSingle.TabIndex = 2;
             this.buttonCreateSingle.Text = "Create Single";
             this.buttonCreateSingle.UseVisualStyleBackColor = true;
             this.buttonCreateSingle.Click += new System.EventHandler(this.buttonCreateSingle_Click);
@@ -75,7 +77,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(439, 81);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Single File";
             // 
@@ -84,7 +86,7 @@
             this.buttonOpen.Location = new System.Drawing.Point(325, 17);
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(75, 23);
-            this.buttonOpen.TabIndex = 4;
+            this.buttonOpen.TabIndex = 2;
             this.buttonOpen.Text = "Open";
             this.buttonOpen.UseVisualStyleBackColor = true;
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
@@ -94,7 +96,7 @@
             this.txtBoxFileName.Location = new System.Drawing.Point(118, 45);
             this.txtBoxFileName.Name = "txtBoxFileName";
             this.txtBoxFileName.Size = new System.Drawing.Size(195, 20);
-            this.txtBoxFileName.TabIndex = 3;
+            this.txtBoxFileName.TabIndex = 1;
             this.txtBoxFileName.Text = "file.dat";
             // 
             // txtBoxOutputFolder
@@ -102,7 +104,7 @@
             this.txtBoxOutputFolder.Location = new System.Drawing.Point(118, 19);
             this.txtBoxOutputFolder.Name = "txtBoxOutputFolder";
             this.txtBoxOutputFolder.Size = new System.Drawing.Size(195, 20);
-            this.txtBoxOutputFolder.TabIndex = 2;
+            this.txtBoxOutputFolder.TabIndex = 0;
             this.txtBoxOutputFolder.Text = "C:\\temp\\";
             // 
             // label2
@@ -133,14 +135,14 @@
             this.comboBox1.Location = new System.Drawing.Point(57, 44);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(81, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox1.TabIndex = 1;
             // 
             // txtFileSize
             // 
             this.txtFileSize.Location = new System.Drawing.Point(57, 20);
             this.txtFileSize.Name = "txtFileSize";
             this.txtFileSize.Size = new System.Drawing.Size(149, 20);
-            this.txtFileSize.TabIndex = 6;
+            this.txtFileSize.TabIndex = 0;
             this.txtFileSize.Text = "1";
             // 
             // label5
@@ -163,17 +165,17 @@
             this.groupBox2.Location = new System.Drawing.Point(227, 114);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(224, 101);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Multiple Files";
             // 
             // btnCreateMultipleFiles
             // 
             this.btnCreateMultipleFiles.Location = new System.Drawing.Point(5, 73);
-            this.btnCreateMultipleFiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateMultipleFiles.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateMultipleFiles.Name = "btnCreateMultipleFiles";
             this.btnCreateMultipleFiles.Size = new System.Drawing.Size(209, 24);
-            this.btnCreateMultipleFiles.TabIndex = 10;
+            this.btnCreateMultipleFiles.TabIndex = 2;
             this.btnCreateMultipleFiles.Text = "Create Multiple Files";
             this.btnCreateMultipleFiles.UseVisualStyleBackColor = true;
             this.btnCreateMultipleFiles.Click += new System.EventHandler(this.btnCreateMultipleFiles_Click);
@@ -191,10 +193,11 @@
             // txtFilesCount
             // 
             this.txtFilesCount.Location = new System.Drawing.Point(118, 20);
-            this.txtFilesCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilesCount.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilesCount.Name = "txtFilesCount";
             this.txtFilesCount.Size = new System.Drawing.Size(76, 20);
-            this.txtFilesCount.TabIndex = 8;
+            this.txtFilesCount.TabIndex = 0;
+            this.txtFilesCount.Text = "100";
             // 
             // label4
             // 
@@ -220,7 +223,8 @@
             this.txtBoxSplitSize.Location = new System.Drawing.Point(118, 44);
             this.txtBoxSplitSize.Name = "txtBoxSplitSize";
             this.txtBoxSplitSize.Size = new System.Drawing.Size(76, 20);
-            this.txtBoxSplitSize.TabIndex = 5;
+            this.txtBoxSplitSize.TabIndex = 1;
+            this.txtBoxSplitSize.Text = "100";
             // 
             // menuStrip1
             // 
@@ -229,7 +233,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(463, 24);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // aboutToolStripMenuItem
@@ -245,25 +249,45 @@
             this.groupBox3.Controls.Add(this.txtFileSize);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(12, 114);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(210, 101);
-            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Single";
+            this.groupBox3.Text = "Single File";
+            // 
+            // lblCreatedFiles
+            // 
+            this.lblCreatedFiles.AutoSize = true;
+            this.lblCreatedFiles.Location = new System.Drawing.Point(390, 218);
+            this.lblCreatedFiles.Name = "lblCreatedFiles";
+            this.lblCreatedFiles.Size = new System.Drawing.Size(13, 13);
+            this.lblCreatedFiles.TabIndex = 6;
+            this.lblCreatedFiles.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(302, 218);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Created Files:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 226);
+            this.ClientSize = new System.Drawing.Size(463, 237);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblCreatedFiles);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "File Size Creator";
             this.groupBox1.ResumeLayout(false);
@@ -301,6 +325,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCreateMultipleFiles;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblCreatedFiles;
+        private System.Windows.Forms.Label label7;
     }
 }
 
