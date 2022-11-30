@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -144,26 +146,61 @@ namespace FileSizeCreator
                 }
                 else
                 {
-                    int counter = 1;
-                    for (int i = 0; i < Convert.ToInt32(txtFilesCount.Text); i++)
-                    {
-                        
-                        string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
-                        
-                        CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + "part" + counter + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
-                        lblCreatedFiles.Text = counter.ToString();
-                        counter++;
-                        this.Refresh();
-                        //MessageBox.Show("Continue");
+                    //Button disabled
+                    btnCreateMultipleFiles.Enabled = false;
+                    //spust timer
+                    timer1.Start();
 
-                    }
                 }
-                
+
             }
             else
             {
                 MessageBox.Show("Output folder neexistuje: " + txtBoxOutputFolder.Text);
             }
+        }
+
+
+
+        int counter = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            if (counter == Convert.ToInt32(txtFilesCount.Text))
+            {
+                timer1.Stop();
+                //timer1.Dispose();
+                btnCreateMultipleFiles.Enabled = true;
+                counter = 0;
+                MessageBox.Show("Finish");
+            }
+            else
+            {
+
+                lblCreatedFiles.Text = counter.ToString();
+                counter++;
+                string timeStamp = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH'.'mm'.'ss");
+                CreateRandomFile(txtBoxOutputFolder.Text + timeStamp + "part" + counter + txtBoxFileName.Text, Convert.ToInt32(txtBoxSplitSize.Text));
+                lblCreatedFiles.Text = counter.ToString();
+                if (string.IsNullOrEmpty(txtBoxDelay.Text))
+                {
+                    
+                }
+                else
+                {
+                    Thread.Sleep(Convert.ToInt32(txtBoxDelay.Text) * 1000 * 1);
+                    //MessageBox.Show(counter.ToString());
+
+                }
+
+            }
+            
+            
+        }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Version 1.20.5");
         }
     }
 }
